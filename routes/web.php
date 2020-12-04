@@ -29,3 +29,4 @@ Route::get('/retetele-mele', [App\Http\Controllers\PrescriptionsController::clas
 Route::get('/retetele-mele/{id}', [App\Http\Controllers\PrescriptionsController::class, 'userView'])->name('prescriptions-userView');
 Route::get('/panou-doctor/retetele-mele', [App\Http\Controllers\PrescriptionsController::class, 'doctorIndex'])->name('prescriptions-doctorIndex');
 
+Route::get('/pricing', [App\Http\Controllers\PricingController::class, 'index'])->name('pricing-index');

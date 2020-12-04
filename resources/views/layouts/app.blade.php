@@ -1910,11 +1910,8 @@
                             <button type="button" class="btn btn-primary btn-md text-uppercase font-weight-bold chat-send py-2 px-6">Send</button>
                         </div>
                     </div>
-                    <!--begin::Compose-->
                 </div>
-                <!--end::Footer-->
             </div>
-            <!--end::Card-->
         </div>
     </div>
 </div>
@@ -1923,6 +1920,7 @@
 <script src="{{ asset("js/plugins.bundle.js") }}"></script>
 <script src="{{ asset("js/prismjs.bundle.js") }}"></script>
 <script src="{{ asset("js/scripts.bundle.js") }}"></script>
+<script src="{{ asset("js/app.js") }}"></script>
 <script src="/metronic/theme/html/demo2/dist/assets/js/pages/features/calendar/basic.js?v=7.1.6"></script>
 @yield('customJS')
 </body>
