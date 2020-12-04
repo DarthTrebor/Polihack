@@ -12,7 +12,7 @@ class CalendarController extends Controller
         $bookings = Booking::where('userId', Auth::id())->get();
 
         $data = array(
-            'title' => 'Programari',
+            'title' => 'Programarile mele',
             'breadcrumbs' => 'Calendar',
             'bookings' => $bookings
         );
