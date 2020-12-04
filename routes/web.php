@@ -25,3 +25,7 @@ Route::get('/calendar', [App\Http\Controllers\CalendarController::class, 'userIn
 Route::get('/panou-doctor/calendar', [App\Http\Controllers\CalendarController::class, 'userIndex'])->name('calendar-doctorIndex');
 Route::post('/calendar/createBooking', [App\Http\Controllers\CalendarController::class, 'doctorCreate'])->name('calendar-createBooking');
 
+
+Route::get('/pricing', [App\Http\Controllers\PricingController::class, 'index']);
+
+
