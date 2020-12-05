@@ -31,7 +31,7 @@
                                     </div>
                                 </div>
                                 <div class="my-lg-0 my-1">
-                                    <a href="#" class="btn btn-sm btn-primary font-weight-bolder text-uppercase">Solicita asistenta</a>
+                                    <a href="{{ route('waiting-room') }}" class="btn btn-sm btn-primary font-weight-bolder text-uppercase">Solicita asistenta</a>
                                 </div>
                             </div>
                             <div class="d-flex align-items-center flex-wrap justify-content-between">
@@ -107,8 +107,5 @@
                 </div>
             </div>
         @endforeach
-    </div>
-    <div id="app">
-        <activity-component></activity-component>
     </div>
 @endsection

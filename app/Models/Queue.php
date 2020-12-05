@@ -10,4 +10,9 @@ class Queue extends Model
     use HasFactory;
 
     protected $table = 'queue';
+
+    protected $fillable = [
+        'userId',
+        'position'
+    ];
 }

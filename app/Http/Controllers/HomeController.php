@@ -32,6 +32,6 @@ class HomeController extends Controller
             'doctors' => $doctors
         );
 
-        return view('pages.userPanel.pricing')->with($data);
+        return view('pages.userPanel.home')->with($data);
     }
 }

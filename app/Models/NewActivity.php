@@ -10,4 +10,8 @@ class NewActivity extends Model
     use HasFactory;
 
     protected $table = 'activity';
+
+    protected $fillable = [
+        'userId'
+    ];
 }

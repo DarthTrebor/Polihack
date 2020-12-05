@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/newActivity/{id}', [App\Http\Controllers\API\ActivityController::class, 'create']);
+
+Route::get('/checkPosition/{id}', [App\Http\Controllers\API\ActivityController::class, 'checkPosition']);
+
+Route::get('/queue/add/{id}', [App\Http\Controllers\API\ActivityController::class, 'addInQueue']);
+
+Route::get('queue/removeInactive/{id}', [App\Http\Controllers\API\ActivityController::class, 'removeInactive']);

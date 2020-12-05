@@ -1,23 +1,25 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example C2mponent</div>
 
-                    <div class="card-body">
-                        I'm an example component.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
+    props: {
+        user: Object
+    },
+    methods: {
+        startActivity() {
+            const self = this;
+            setInterval(function() {
+                axios.get('/api/newActivity/' + self.user.id, {
+                })
+            }, 5000)
+        }
+    },
     mounted() {
-        console.log('Component mounted.')
+        this.startActivity()
     }
 }
 </script>

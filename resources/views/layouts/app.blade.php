@@ -1921,7 +1921,6 @@
 <script src="{{ asset("js/prismjs.bundle.js") }}"></script>
 <script src="{{ asset("js/scripts.bundle.js") }}"></script>
 <script src="{{ asset("js/app.js") }}"></script>
-<script src="/metronic/theme/html/demo2/dist/assets/js/pages/features/calendar/basic.js?v=7.1.6"></script>
 @yield('customJS')
 </body>
 </html>
