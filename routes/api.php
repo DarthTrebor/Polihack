@@ -24,3 +24,8 @@ Route::get('queue/removeInactive/{id}', [App\Http\Controllers\API\ActivityContro
 
 Route::get('/examination-room/newConversation/{userId}/{medicId}', [App\Http\Controllers\API\ChatController::class, 'onLoad']);
 Route::post('/examination-room/sendMessage', [App\Http\Controllers\API\ChatController::class, 'sendMessage']);
+
+Route::post('/prescription/add', [App\Http\Controllers\API\ChatController::class, 'addPrescription']);
+Route::post('/booking/add', [App\Http\Controllers\API\ChatController::class, 'addBooking']);
+
+Route::get('/endConversation/{medicId}/{userId}', [App\Http\Controllers\API\ChatController::class, 'endConversation']);

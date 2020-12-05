@@ -1,5 +1,22 @@
 <template>
     <div class="card card-custom">
+        <div class="card-header align-items-center px-4 py-3">
+            <div class="text-left flex-grow-1">
+                <button type="button" data-toggle="modal" data-target="#prescriptionModal" class="btn btn-warning btn-sm">
+                    Ofera reteta
+                </button>
+            </div>
+            <div class="text-center" v-if="user.id === medic.id">
+                <button type="button" @click="stopConversation" class="btn btn-warning btn-sm">
+                    Inchide conversatia
+                </button>
+            </div>
+            <div class="text-right flex-grow-1">
+                <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#bookingModal">
+                    Programeaza pacient
+                </button>
+            </div>
+        </div>
         <div class="card-body">
             <div class="scroll scroll-pull" data-mobile-height="350">
                 <div class="messages">
@@ -11,7 +28,7 @@
                                 </div>
                                 <div>
                                     <a v-if="message.senderId !== user.id" class="text-dark-75 text-hover-primary font-weight-bold font-size-h6">
-                                        {{ user.firstname }}
+                                        {{ contact.firstname }}
                                     </a>
                                     <a v-else class="text-dark-75 text-hover-primary font-weight-bold font-size-h6">
                                         Tu
@@ -41,6 +58,95 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="prescriptionModal" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-body" style="height: 300px;">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h4 class="text-center">
+                                    Creeaza o reteta
+                                    <hr>
+                                </h4>
+                                <form class="form">
+                                    <div class="form-group row mb-10">
+                                        <div class="col-lg-12">
+                                            <input type="text" class="form-control" v-model="title" placeholder="Titlu">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-10">
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" v-model="county" placeholder="Judet">
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" v-model="city" placeholder="Oras">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-10">
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" v-model="cnp" placeholder="Cod numeric personal">
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" v-model="age" placeholder="Varsta">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-10">
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" v-model="sex" placeholder="Sex">
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" v-model="address" placeholder="Adresa">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-10">
+                                        <div class="col-lg-12">
+                                            <textarea type="text" class="form-control" v-model="diagnostic" placeholder="Diagnostic"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-10">
+                                        <div class="col-lg-12">
+                                            <textarea type="text" class="form-control" v-model="prescription" placeholder="Reteta propriu-zisa"></textarea>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Anuleaza</button>
+                        <button type="button" class="btn btn-primary font-weight-bold" @click="createPrescription" data-dismiss="modal">Creeaza</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-body" style="height: 300px;">
+                        <h4 class="text-center">
+                            Programeaza pacient
+                            <hr>
+                        </h4>
+                        <form class="form">
+                            <div class="form-group row">
+                                <div class="col-lg-6">
+                                    <label class="label">Zi</label>
+                                    <input type="date" class="form-control" v-model="date" placeholder="Select date">
+                                </div>
+                                <div class="col-lg-6">
+                                    <label class="label">Ora</label>
+                                    <input type="time" class="form-control" v-model="time" placeholder="Select date">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Anuleaza</button>
+                        <button type="button" class="btn btn-primary font-weight-bold" @click="createBooking" data-dismiss="modal">Creeaza</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -58,6 +164,19 @@ export default {
             messages: [],
             text: '',
             contact: null,
+
+            city: '',
+            county: '',
+            cnp: '',
+            sex: '',
+            age: '',
+            address: '',
+            diagnostic: '',
+            prescription: '',
+            title: '',
+            startsAt: '',
+            date: '',
+            time: '',
         }
     },
     methods: {
@@ -84,6 +203,39 @@ export default {
         },
         dateFormat(date) {
             return moment(date).format("LT")
+        },
+        createPrescription() {
+            axios.post('/api/prescription/add', {
+                title: this.title,
+                city: this.city,
+                county: this.county,
+                age: this.age,
+                sex: this.sex,
+                cnp: this.cnp,
+                address: this.address,
+                prescription: this.prescription,
+                diagnostic: this.diagnostic,
+                medicId: this.medic.id,
+                pacientId: this.contact.id
+            }).then(response => {
+                toastr.success("Reteta a fost creeata!");
+            })
+        },
+        createBooking() {
+            axios.post('/api/booking/add', {
+                date: this.date,
+                time: this.time,
+                medicId: this.medic.id,
+                pacientId: this.contact.id
+            }).then(response => {
+                toastr.success("Programarea a fost creeata!");
+            })
+        },
+        stopConversation() {
+            console.log('test');
+            axios.get('/api/endConversation/' + this.medic.id + '/' + this.contact.id,{
+
+            })
         }
     },
     mounted: function() {
@@ -97,6 +249,14 @@ export default {
 
         examinationChannel.bind('newMessage', (data) => {
             this.messages.push(data.message);
+        });
+
+        examinationChannel.bind('endConversation', (data) => {
+            if(this.user.id === this.medic.id) {
+                location.reload();
+            } else {
+                window.location = '/home';
+            }
         });
 
         examinationChannel.bind('newConversation', (data) => {

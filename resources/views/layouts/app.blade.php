@@ -56,7 +56,7 @@
                                 <!--begin::Header Nav-->
                                 <ul class="menu-nav">
                                     <li class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="click" aria-haspopup="true">
-                                        <a href="#}" class="menu-link menu-toggle">
+                                        <a href="{{ route('home') }}" class="menu-link ">
                                             <span class="menu-text">Acasa</span>
                                             <i class="menu-arrow"></i>
                                         </a>
@@ -1869,6 +1869,26 @@
 <script src="{{ asset("js/prismjs.bundle.js") }}"></script>
 <script src="{{ asset("js/scripts.bundle.js") }}"></script>
 <script src="{{ asset("js/app.js") }}"></script>
+<script src="{{ asset("js/toastr.js") }}"></script>
+<script>
+    toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": false,
+        "positionClass": "toast-bottom-right",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    };
+</script>
 @yield('customJS')
 </body>
 </html>

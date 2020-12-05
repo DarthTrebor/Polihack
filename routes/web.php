@@ -34,7 +34,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/retetele-mele/{id}', [App\Http\Controllers\PrescriptionsController::class, 'userView'])->name('prescriptions-userView');
     Route::get('/panou-doctors/retetele-mele', [App\Http\Controllers\PrescriptionsController::class, 'doctorIndex'])->name('prescriptions-doctorIndex');
 
-    Route::get('/asteptare/{medicName', [App\Http\Controllers\QueueController::class, 'index'])->name('waiting-room');
+    Route::get('/asteptare/{medicName}', [App\Http\Controllers\QueueController::class, 'index'])->name('waiting-room');
 
     Route::get('/consultatie-medicala/doctor-{name}', [App\Http\Controllers\ExaminationController::class, 'index'])->name('asistance-room');
 

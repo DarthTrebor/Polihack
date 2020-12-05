@@ -10,6 +10,9 @@ class Prescription extends Model
     use HasFactory;
 
     protected $table = 'prescriptions';
+    protected $fillable = [
+        'medicId', 'content', 'title', 'pacientId'
+    ];
 
     public function getMedic() {
         return $this->belongsTo(User::class, 'medicId');

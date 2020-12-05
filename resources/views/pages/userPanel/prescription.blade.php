@@ -52,7 +52,7 @@
                                                 </div>
                                             </td>
                                             <td class="pl-0">
-                                                <a href="#" class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">{{ $prescription->title }}</a>
+                                                <a href="{{ route('prescriptions-userView', $prescription->id) }}" class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">{{ $prescription->title }}</a>
                                                 <span class="text-muted font-weight-bold d-block">Oferita de doctorul <b>{{ $prescription->getMedic->lastname }} {{ $prescription->getMedic->firstname }}</b></span>
                                             </td>
                                             <td></td>
@@ -61,7 +61,7 @@
                                                 <span class="text-muted font-weight-bold d-block font-size-sm">Timpul creearii</span>
                                             </td>
                                             <td class="text-right pr-0">
-                                                <a href="#" class="btn btn-icon btn-light btn-sm">
+                                                <a href="{{ route('prescriptions-userView', $prescription->id) }}" class="btn btn-icon btn-light btn-sm">
 													<span class="svg-icon svg-icon-md svg-icon-primary">
 														<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 															<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">

@@ -11,6 +11,18 @@ class ExaminationController extends Controller
 {
     public function index($name) {
         $firstInQueue = Queue::where('position', 1)->first();
+
+        if(Auth::user()->rank == 1) {
+            $medic = User::where('lastname', $name)->first();
+
+            $data = array(
+                'title' => 'Camera de consultanta',
+                'breadcrumbs' => 'Consultatie Medicala',
+                'medic' => $medic
+            );
+            return view('pages.userPanel.examination')->with($data);
+        }
+
         if($firstInQueue && $firstInQueue->userId == Auth::id()) {
             $medic = User::where('lastname', $name)->first();
 

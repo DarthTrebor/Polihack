@@ -11,7 +11,7 @@ class Booking extends Model
 
     protected $table = 'bookings';
 
-    protected $fillable = ['userId', 'scheduled'];
+    protected $fillable = ['userId', 'doctorId', 'startsAt'];
 
     public function getDoctor() {
         return $this->belongsTo(User::class, 'doctorId');

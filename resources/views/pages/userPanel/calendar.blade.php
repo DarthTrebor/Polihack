@@ -75,7 +75,7 @@
                                 @foreach($bookings as $booking)
                             {
                                 title: 'Programare',
-                                start: '{{ $booking->scheduled }}',
+                                start: '{{ $booking->startsAt }}',
                                 description: 'Cu doctorul {{ $booking->getDoctor->firstname }} {{ $booking->getDoctor->lastname }}',
                                 className: "fc-event-danger fc-event-solid-warning"
 
