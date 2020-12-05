@@ -28,7 +28,7 @@
                             <!--begin::Body-->
                             <div class="pt-1">
                                 <!--begin::Text-->
-                                <p class="text-dark-75 font-weight-nirmal font-size-lg m-0 pb-7">Pun faianta si bat cuie fut in cur si dau la muie.</p>
+                                <p class="text-dark-75 font-weight-nirmal font-size-lg m-0 pb-7">Salut. Sunt doar un simplu doctor!</p>
                                 <!--end::Text-->
                                 <!--begin::Item-->
                                 <div class="d-flex align-items-center pb-9">

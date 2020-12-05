@@ -17,15 +17,3 @@
     </div>
 @endsection
 
-@section("customJS")
-    <script>
-        $('#kt_datepicker').datepicker({
-            todayHighlight: true,
-            templates: {
-                leftArrow: '&lt;i class="la la-angle-left"&gt;&lt;/i&gt;',
-                rightArrow: '&lt;i class="la la-angle-right"&gt;&lt;/i&gt;'
-            }
-        })
-    </script>
-@endsection
-

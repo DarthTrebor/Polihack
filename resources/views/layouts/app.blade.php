@@ -62,21 +62,21 @@
                                         </a>
                                     </li>
                                     <li class="menu-item menu-item-open menu-item-here menu-item-submenu menu-item-rel menu-item-open menu-item-here" data-menu-toggle="click" aria-haspopup="true">
-                                        <a href="javascript:;" class="menu-link menu-toggle">
+                                        <a href="javascript:;" class="menu-link">
                                             <span class="menu-text">Calendar</span>
                                             <span class="menu-desc"></span>
                                             <i class="menu-arrow"></i>
                                         </a>
                                     </li>
                                     <li class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="click" aria-haspopup="true">
-                                        <a href="javascript:;" class="menu-link menu-toggle">
+                                        <a href="javascript:;" class="menu-link">
                                             <span class="menu-text">Retete</span>
                                             <span class="menu-desc"></span>
                                             <i class="menu-arrow"></i>
                                         </a>
                                     </li>
                                     <li class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="click" aria-haspopup="true">
-                                        <a href="javascript:;" class="menu-link menu-toggle">
+                                        <a href="javascript:;" class="menu-link">
                                             <span class="menu-text">Chat</span>
                                             <span class="menu-desc"></span>
                                             <i class="menu-arrow"></i>

@@ -1,12 +1,12 @@
 <template>
     <div class="card card-custom">
-        <div class="card-header align-items-center px-4 py-3">
+        <div class="card-header align-items-center px-4 py-3" v-if="user.id === medic.id">
             <div class="text-left flex-grow-1">
                 <button type="button" data-toggle="modal" data-target="#prescriptionModal" class="btn btn-warning btn-sm">
                     Ofera reteta
                 </button>
             </div>
-            <div class="text-center" v-if="user.id === medic.id">
+            <div class="text-center">
                 <button type="button" @click="stopConversation" class="btn btn-warning btn-sm">
                     Inchide conversatia
                 </button>
