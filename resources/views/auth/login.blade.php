@@ -5,15 +5,12 @@
     <title>Login Page 1 | Keenthemes</title>
     <meta name="description" content="Login page example" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link rel="canonical" href="https://keenthemes.com/metronic" />
-    <!--begin::Fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
     <link href="{{asset("css/login-1.css")}}" rel="stylesheet" type="text/css" />
     <link href="{{asset("css/plugins.bundle.css")}}" rel="stylesheet" type="text/css" />
     <link href="{{asset("css/prismjs.bundle.css")}}" rel="stylesheet" type="text/css" />
     <link href="{{asset("css/style.bundle.css")}}" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="/metronic/theme/html/demo2/dist/assets/media/logos/favicon.ico" />
-</head>
+    <link rel="shortcut icon" href="{{ asset('images/NETMED-cross.ico') }}" /></head>
 <body id="kt_body" style="background-image: url({{asset("images/bg-10.jpg")}})" class="quick-panel-right demo-panel-right offcanvas-right header-fixed subheader-enabled page-loading">
 <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5FS8GGP" height="0" width="0" style="display:none;visibility:hidden"></iframe>
@@ -23,11 +20,11 @@
         <div class="login-aside d-flex flex-row-auto bgi-size-cover bgi-no-repeat p-10 p-lg-10" style="background-image: url({{asset("images/bg-4.jpg")}});">
             <div class="d-flex flex-row-fluid flex-column justify-content-between">
                 <a href="#" class="flex-column-auto mt-5 pb-lg-0 pb-10">
-                    <img src="/metronic/theme/html/demo2/dist/assets/media/logos/logo-letter-1.png" class="max-h-70px" alt="" />
+                    <img src="{{ asset('images/White-logo.png') }}" class="max-h-300px" alt="" />
                 </a>
                 <div class="flex-column-fluid d-flex flex-column justify-content-center">
                     <h3 class="font-size-h1 mb-5 text-white">Bine ai venit pe NETMED!</h3>
-                    <p class="font-weight-lighter text-white opacity-80">-</p>
+                    <p class="font-weight-lighter text-white opacity-80">Clinica ta medicala online.</p>
                 </div>
                 <div class="d-none flex-column-auto d-lg-flex justify-content-between mt-10">
                     <div class="opacity-70 font-weight-bold text-white">© 2020 NETMED</div>

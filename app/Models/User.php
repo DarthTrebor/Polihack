@@ -46,4 +46,8 @@ class User extends Authenticatable
     public function prescriptions() {
         return $this->hasMany(Prescription::class, 'userId');
     }
+
+    public function conversations() {
+        return $this->hasMany(Conversation::class, 'medicId');
+    }
 }

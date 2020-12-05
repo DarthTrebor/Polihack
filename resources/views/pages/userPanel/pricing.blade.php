@@ -2,6 +2,13 @@
 
 @section('content')
     <div class="container">
+        @if($errors->any())
+            <div class="alert alert-danger">
+                @foreach($errors->all() as $error)
+                    <p>{{ $error }}</p>
+                @endforeach
+            </div>
+        @endif
         <div class="card">
             <div class="position-absolute w-100 h-50 rounded-card-top" style="background-color: #22B9FF"></div>
             <div class="card-body position-relative">
@@ -47,8 +54,8 @@
                                         <span class="font-size-h1 d-block font-weight-boldest text-dark">80
 																<sup class="font-size-h3 font-weight-normal pl-1">RON / luna</sup></span>
                                         <div class="mt-7">
-                                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
-                                                <button type="button" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Purchase</button>
+                                            <a href="{{ route('login') }}" target="_blank">
+                                                <button type="button" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Alege</button>
                                             </a>
                                         </div>
                                     </div>
@@ -80,8 +87,8 @@
                                         <span class="font-size-h1 d-block font-weight-boldest text-dark">220
 																<sup class="font-size-h3 font-weight-normal pl-1">RON / luna</sup></span>
                                         <div class="mt-7">
-                                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
-                                                <button type="button" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Purchase</button>
+                                            <a href="{{ route('login') }}" target="_blank">
+                                                <button type="button" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Alege</button>
                                             </a>
                                         </div>
                                     </div>
@@ -113,8 +120,8 @@
                                         <span class="font-size-h1 d-block font-weight-boldest text-dark">430
 																<sup class="font-size-h3 font-weight-normal pl-1">RON / luna</sup></span>
                                         <div class="mt-7">
-                                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
-                                                <button type="button" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Purchase</button>
+                                            <a href="{{ route('login') }}" target="_blank">
+                                                <button type="button" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Alege</button>
                                             </a>
                                         </div>
                                     </div>
@@ -159,7 +166,9 @@
                                     <span class="font-size-h1 d-block font-weight-boldest text-dark" id="price">0
 																<sup class="font-size-h3 font-weight-normal pl-1">RON / luna / luna</sup></span>
                                     <div class="mt-7">
-                                        <button type="button" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Purchase</button>
+                                        <a href="{{ route('login') }}" target="_blank">
+                                            <button type="button" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Alege</button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -168,7 +177,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 @endsection
 

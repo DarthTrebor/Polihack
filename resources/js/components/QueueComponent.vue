@@ -7,7 +7,7 @@
                 </div>
                 <div class="text-center" v-if="currentPosition === 1">
                     <h4>Asteptarea a luat sfarsit!</h4>
-                    <button class="btn btn-success">Intra in camera!</button>
+                    <a class="btn btn-success" :href="'/consultatie-medicala/doctor-' + medic.lastname">Intra in camera!</a>
                     <div class="mt-10">
                         <h3 v-if="timer" class="mt-4">{{ timer }}</h3>
                         <h4 class="text-danger">Daca nu te conectezi la timp, vei pierde randul la coada!</h4>
@@ -24,7 +24,8 @@ import moment from 'moment';
 
 export default {
     props: {
-        user: Object
+        user: Object,
+        medic: Object,
     },
     data() {
         return {

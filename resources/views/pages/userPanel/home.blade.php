@@ -2,13 +2,20 @@
 
 @section('content')
     <div class="container">
+        @if($errors->any())
+            <div class="alert alert-danger">
+                @foreach($errors->all() as $error)
+                    <p>{{ $error }}</p>
+                @endforeach
+            </div>
+        @endif
         @foreach($doctors as $doctor)
             <div class="card card-custom gutter-b">
                 <div class="card-body">
                     <div class="d-flex">
                         <div class="flex-shrink-0 mr-7">
                             <div class="symbol symbol-50 symbol-lg-120">
-                                <img alt="Pic" src="{{ asset('images/users/300_1.jpg') }}">
+                                <img alt="Pic" src="{{ asset('images/doctors/doctor-'.($loop->index+1).'.png') }}">
                             </div>
                         </div>
                         <div class="flex-grow-1">
@@ -31,12 +38,11 @@
                                     </div>
                                 </div>
                                 <div class="my-lg-0 my-1">
-                                    <a href="{{ route('waiting-room') }}" class="btn btn-sm btn-primary font-weight-bolder text-uppercase">Solicita asistenta</a>
+                                    <a href="{{ route('waiting-room', $doctor->lastname) }}" class="btn btn-sm btn-primary font-weight-bolder text-uppercase">Solicita asistenta</a>
                                 </div>
                             </div>
                             <div class="d-flex align-items-center flex-wrap justify-content-between">
-                                <div class="flex-grow-1 font-weight-bold text-dark-50 py-2 py-lg-2 mr-5">I distinguish three main text objectives could be merely to inform people.
-                                    <br>A second could be persuade people. You want people to bay objective.</div>
+                                <div class="flex-grow-1 font-weight-bold text-dark-50 py-2 py-lg-2 mr-5">{{ $doctor->description }}</div>
                                 <div class="d-flex mt-4 mt-sm-0">
                                     <span class="font-weight-bold mr-4">Persoane in asteptare</span>
                                     @php
@@ -59,7 +65,7 @@
                             <div class="d-flex flex-column text-dark-75">
                                 <span class="font-weight-bolder font-size-sm">Specialitate</span>
                                 <span class="font-weight-bolder font-size-h5">
-                                                        <span class="text-dark-50 font-weight-bold"></span>Doctor de familie</span>
+                                                        <span class="text-dark-50 font-weight-bold"></span>{{ $doctor->specialization }}</span>
                             </div>
                         </div>
                         <div class="d-flex align-items-center flex-lg-fill mr-5 my-1">
@@ -67,7 +73,7 @@
                                                         <i class="flaticon-like icon-2x text-muted font-weight-bold"></i>
                                                     </span>
                             <div class="d-flex flex-column flex-lg-fill">
-                                <span class="text-dark-75 font-weight-bolder font-size-sm">73 aprecieri</span>
+                                <span class="text-dark-75 font-weight-bolder font-size-sm">{{ rand(1, 100) }} aprecieri</span>
                             </div>
                         </div>
                         <div class="d-flex align-items-center flex-lg-fill mr-5 my-1">
@@ -75,7 +81,7 @@
                                                         <i class="flaticon-chat-1 icon-2x text-muted font-weight-bold"></i>
                                                     </span>
                             <div class="d-flex flex-column">
-                                <span class="text-dark-75 font-weight-bolder font-size-sm">648 conversatii</span>
+                                <span class="text-dark-75 font-weight-bolder font-size-sm">{{ $doctor->conversations->count() }}</span>
                             </div>
                         </div>
                         <div class="d-flex align-items-center flex-lg-fill my-1">

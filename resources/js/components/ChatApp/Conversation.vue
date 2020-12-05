@@ -16,7 +16,7 @@
                                     <a v-else class="text-dark-75 text-hover-primary font-weight-bold font-size-h6">
                                         Tu
                                     </a>
-                                    <span class="text-muted font-size-sm">Chiar acum</span>
+                                    <span class="text-muted font-size-sm">{{ dateFormat(message.created_at) }}</span>
                                 </div>
                             </div>
                             <div class="mt-2 rounded p-5 text-dark-50 font-weight-bold font-size-lg text-left max-w-400px" v-bind:class="{'bg-light' : message.senderId === user.id,  'bg-light-success' : message.senderId !== user.id}">{{ message.text }}</div>
@@ -68,6 +68,8 @@ export default {
             }
         },
         sendMessage() {
+            if(this.text === '') return;
+
             axios.post('/api/examination-room/sendMessage', {
                 senderId: this.user.id,
                 receiverId: this.contact.id,
@@ -79,6 +81,9 @@ export default {
             })
             .catch((error)=>console.log(error));
             this.text = '';
+        },
+        dateFormat(date) {
+            return moment(date).format("LT")
         }
     },
     mounted: function() {
