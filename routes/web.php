@@ -32,6 +32,8 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::get('/asteptare', [App\Http\Controllers\QueueController::class, 'index'])->name('waiting-room');
 
+    Route::get('/consultatie-medicala/doctor-{name}', [App\Http\Controllers\ExaminationController::class, 'index'])->name('asistance-room');
+
 });
 
 Auth::routes();

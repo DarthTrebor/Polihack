@@ -17,7 +17,7 @@
 <body id="kt_body" style="background-image: url({{ asset("images/bg-10.jpg") }})" class="quick-panel-right demo-panel-right offcanvas-right header-fixed subheader-enabled page-loading">
 <div id="kt_header_mobile" class="header-mobile">
     <a href="/metronic/demo2/index.html">
-        <img alt="Logo" src="/metronic/theme/html/demo2/dist/assets/media/logos/logo-letter-1.png" class="logo-default max-h-30px" />
+        <img alt="Logo" src="{{ asset('images/White-logo.png') }}" class="logo-default max-h-100px" />
     </a>
     <div class="d-flex align-items-center">
         <button class="btn p-0 burger-icon burger-icon-left ml-4" id="kt_header_mobile_toggle">
@@ -45,7 +45,7 @@
                         <!--begin::Header Logo-->
                         <div class="header-logo">
                             <a href="/metronic/demo2/index.html">
-                                <img alt="Logo" src="/metronic/theme/html/demo2/dist/assets/media/logos/logo-letter-9.png" class="logo-default max-h-40px" />
+                                <img alt="Logo" src="{{ asset('images/White-logo.png') }}" class="logo-default max-h-100px" />
                                 <img alt="Logo" src="/metronic/theme/html/demo2/dist/assets/media/logos/logo-letter-1.png" class="logo-sticky max-h-40px" />
                             </a>
                         </div>

@@ -21,3 +21,6 @@ Route::get('/checkPosition/{id}', [App\Http\Controllers\API\ActivityController::
 Route::get('/queue/add/{id}', [App\Http\Controllers\API\ActivityController::class, 'addInQueue']);
 
 Route::get('queue/removeInactive/{id}', [App\Http\Controllers\API\ActivityController::class, 'removeInactive']);
+
+Route::get('/examination-room/newConversation/{userId}/{medicId}', [App\Http\Controllers\API\ChatController::class, 'onLoad']);
+Route::post('/examination-room/sendMessage', [App\Http\Controllers\API\ChatController::class, 'sendMessage']);
