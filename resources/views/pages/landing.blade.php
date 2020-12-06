@@ -320,7 +320,7 @@
             const obj = document.getElementById('customSubscription');
 
             if(obj.value > 0) {
-                const price = obj.value * 80 - 10 * (obj.value - 1);
+                const price = parseInt(obj.value, 10) * 80 - 10 * (parseInt(obj.value, 10) - 1);
 
                 $("#price").html(
                     '<span class="font-size-h1 d-block font-weight-boldest text-dark" id="price">' + price +
