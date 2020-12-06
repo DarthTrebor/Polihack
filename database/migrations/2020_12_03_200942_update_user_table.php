@@ -16,6 +16,7 @@ class UpdateUserTable extends Migration
         Schema::table('users', function($table) {
             $table->string('phone');
             $table->string('firstname');
+            $table->integer('rank')->default(0);
             $table->string('lastname');
         });
     }
