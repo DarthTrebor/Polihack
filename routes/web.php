@@ -25,7 +25,7 @@ Route::get('/', function () {
 
 Route::group(['middleware' => 'auth'], function() {
 
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/acasa', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
     Route::get('/calendar', [App\Http\Controllers\CalendarController::class, 'userIndex'])->name('calendar-userIndex');
     Route::get('/panou-doctors/calendar', [App\Http\Controllers\CalendarController::class, 'userIndex'])->name('calendar-doctorIndex');
@@ -39,6 +39,8 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::get('/consultatie-medicala/doctor-{name}', [App\Http\Controllers\ExaminationController::class, 'index'])->name('asistance-room');
 
+    Route::get('/profilul-meu', [App\Http\Controllers\ProfileController::class, 'index'])->name('viewProfile');
+    Route::post('/profilul-meu/actualizeaza', [App\Http\Controllers\ProfileController::class, 'updateProfile'])->name('profile-update');
 });
 
 Auth::routes();

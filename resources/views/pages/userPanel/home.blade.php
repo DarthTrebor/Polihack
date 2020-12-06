@@ -15,7 +15,7 @@
                     <div class="d-flex">
                         <div class="flex-shrink-0 mr-7">
                             <div class="symbol symbol-50 symbol-lg-120">
-                                <img alt="Pic" src="{{ asset('images/doctors/doctor-'.($loop->index+1).'.png') }}">
+                                <img alt="Pic" src="{{ $doctor->profile_img_link }}">
                             </div>
                         </div>
                         <div class="flex-grow-1">

@@ -24,7 +24,8 @@
                         <div class="d-flex flex-column mb-5" v-bind:class="{'align-items-end' : message.senderId === user.id,  'align-items-start' : message.senderId !== user.id}">
                             <div class="d-flex align-items-center">
                                 <div class="symbol symbol-circle symbol-40 mr-3">
-                                    <img alt="Pic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp42BoZ9_X2cAsWbOqA8U3CCjRPAP65-msNg&usqp=CAU">
+                                    <img alt="Pic" v-if="message.senderId === medic.id" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp42BoZ9_X2cAsWbOqA8U3CCjRPAP65-msNg&usqp=CAU">
+                                    <img alt="Pic" v-else src="https://images-ext-1.discordapp.net/external/UChKpOfEThwuPrXjAGK-AnTr0sa9Xtc6f0ikR4bjOHQ/%3Fv%3D1419612709/https/images6.fanpop.com/image/polls/1444000/1444286_1419612687826_full.jpg">
                                 </div>
                                 <div>
                                     <a v-if="message.senderId !== user.id" class="text-dark-75 text-hover-primary font-weight-bold font-size-h6">
@@ -255,7 +256,7 @@ export default {
             if(this.user.id === this.medic.id) {
                 location.reload();
             } else {
-                window.location = '/home';
+                window.location = '/acasa';
             }
         });
 
