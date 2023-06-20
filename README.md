@@ -2,11 +2,4 @@
 
 <h3>NETMED is a telemedicine web application that was created during the Polihack V11 hackathon amid the pandemic. It enables remote communication between doctors and patients.</h3>
 
-<html>
-<head>
-  <title>Embedded YouTube Video</title>
-</head>
-<body>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/WyosRTp0ifA" frameborder="0" allowfullscreen></iframe>
-</body>
-</html>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WyosRTp0ifA" frameborder="0" allowfullscreen></iframe>
